@@ -14,8 +14,8 @@
 	<name>projectManagementSystem</name>
 	<description>projectManagementSystem</description>
 	<modules>
-		<module>backend-service</module>
-		<module>mail-service</module>
+		<module>backend_service</module>
+		<module>mail_service</module>
 	</modules>
 	<url/>
 	<licenses>
