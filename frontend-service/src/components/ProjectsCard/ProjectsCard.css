@@ -1,0 +1,25 @@
+.projects-card {
+    width: 244px;
+    margin: 0;
+    padding: 10px 25px;
+    background-color: white;
+    color: #484848;
+    border: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

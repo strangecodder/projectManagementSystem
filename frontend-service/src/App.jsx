@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Button from './components/Button/Button.jsx'
+import Logo from './components/Logo/Logo.jsx'
+// import DashboardPage from './pages/DashoardPage/DashboardPage.jsx'
+import ProjectsPage from './pages/ProjectsPage/ProjectsPage.jsx'
 import './App.css'
 
 function App() {
@@ -8,7 +10,31 @@ function App() {
 
   return (
     <>
-      <div>
+    <div className='main-header'>
+      <Logo />
+      <div className='main-nav'>
+        <Button style='button-component' title='Календарь'/>
+        <Button style='button-component active' title='Проекты'/>
+        <Button style='button-component' title='Кабинет'/>
+      </div>
+      <Button style='button-component logout-button' title='Выход'/>
+    </div>
+    <div className='main-body'>
+      <aside className='main-aside'>
+
+      </aside>
+      <section className='main-section'>
+        <ProjectsPage />
+      </section>
+    </div>
+
+
+
+
+
+
+
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -27,7 +53,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </>
   )
 }
