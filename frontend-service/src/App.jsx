@@ -1,8 +1,13 @@
 import { useState } from 'react'
+import { Routes, Route, Link } from "react-router-dom";
 import Button from './components/Button/Button.jsx'
 import Logo from './components/Logo/Logo.jsx'
+import LinkButton from './components/LinkButton/LinkButton.jsx'
 // import DashboardPage from './pages/DashoardPage/DashboardPage.jsx'
 import ProjectsPage from './pages/ProjectsPage/ProjectsPage.jsx'
+import DashboardPage from './pages/DashoardPage/DashboardPage.jsx';
+import ProfilePage from './pages/ProfilePage/ProfilePage.jsx';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage.jsx';
 import './App.css'
 
 function App() {
@@ -13,18 +18,22 @@ function App() {
     <div className='main-header'>
       <Logo />
       <div className='main-nav'>
-        <Button style='button-component' title='Календарь'/>
-        <Button style='button-component active' title='Проекты'/>
-        <Button style='button-component' title='Кабинет'/>
+        <LinkButton style='button-component active' link='/dashboard' title='Календарь'/>
+        <LinkButton style='button-component' link='/projects' title='Проекты'/>
       </div>
-      <Button style='button-component logout-button' title='Выход'/>
+      <LinkButton style='button-component profile-button' link='/profile' title=''/>
     </div>
     <div className='main-body'>
       <aside className='main-aside'>
 
       </aside>
       <section className='main-section'>
-        <ProjectsPage />
+        <Routes>
+          <Route path='/dashboard' element={<DashboardPage />}/>
+          <Route path='/projects' element={<ProjectsPage />}/>
+          <Route path='/profile' element={<ProfilePage />}/>
+          <Route path='/about-us' element={<AboutUsPage />}/>
+        </Routes>
       </section>
     </div>
 

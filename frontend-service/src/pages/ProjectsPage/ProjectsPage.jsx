@@ -12,8 +12,8 @@ function ProjectsPage() {
                 <Button style='button-component add-project-button' title='+'/>
             </div>
             <div className="projects-list">
-                <ProjectsCard />
-                <ProjectsCard />
+                <ProjectsCard title='Проект 1' buttonTitle='Перейти к проекту'/>
+                <ProjectsCard title='Спринт 1' buttonTitle='Перейти к спринту'/>
                 <ProjectsCard />
                 <ProjectsCard />
                 <ProjectsCard />
