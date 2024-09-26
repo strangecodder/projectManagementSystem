@@ -9,23 +9,7 @@ networks:
     driver: bridge
 
 services:
-  postgres-db :
-    container_name : postgres-pms
-    image : postgres:14.5
-    volumes :
-      - postgres-data:/var/lib/postgresql/data
-    ports :
-      - "5432:5432"
-    environment :
-      POSTGRES_USER : postgres
-      POSTGRES_PASSWORD : postgres
-      POSTGRES_DB : pms
-    healthcheck :
-      test : ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
-      interval : 10s
-      timeout : 5s
-      retries : 3
-      start_period : 60s
-    restart : unless-stopped
-    networks :
-      - appnet
+  db:
+    build: .
+    ports:
+      - 5432:5432
