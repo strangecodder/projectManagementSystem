@@ -1,0 +1,29 @@
+.projects-page {
+    margin: 0;
+    padding: 0;
+}
+
+.projects-header {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 39px;
+    gap: 10px;
+    align-items: center;
+}
+
+.projects-header div {
+    font-size: 24px;
+    font-weight: 500;
+    color: #484848;
+}
+
+.projects-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 39px;
+}

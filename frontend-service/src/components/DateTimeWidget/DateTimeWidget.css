@@ -1,0 +1,17 @@
+.date-time-widget {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    border: 1px solid #484848;
+    border-radius: 3px;
+    margin: 0;
+    padding: 5px;
+    color: #484848;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.yellow {
+    border: 1px solid #F6CF6A;
+    color: #F6CF6A;
+}
