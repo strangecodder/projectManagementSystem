@@ -23,6 +23,7 @@ public class Sprint implements Serializable {
     private LocalDate start_date;
     private LocalDate end_date;
     @ManyToOne()
+    @JoinColumn(name = "id_project")
     private Project project_id;
     @OneToMany(mappedBy = "sprint_id",cascade = CascadeType.ALL)
     private List<Sprint_story> sprintStories=new ArrayList<>();

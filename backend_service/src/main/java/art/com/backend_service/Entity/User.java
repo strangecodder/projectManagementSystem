@@ -26,6 +26,7 @@ public class User implements Serializable {
     private String password;
     private String git_nick;
     @ManyToOne()
+    @JoinColumn(name = "id_department")
     private DepartmentInfo department_id;
     @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
     private List<User_Project> toProjects=new ArrayList<>();

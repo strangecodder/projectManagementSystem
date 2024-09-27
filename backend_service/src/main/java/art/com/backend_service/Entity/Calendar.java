@@ -1,9 +1,6 @@
 package art.com.backend_service.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,8 +15,10 @@ import java.io.Serializable;
 public class Calendar implements Serializable {
     @Id
     @ManyToOne()
+    @JoinColumn(name = "id_user")
     private User user_id;
     @Id
     @ManyToOne()
+    @JoinColumn(name = "id_event")
     private Event event_id;
 }

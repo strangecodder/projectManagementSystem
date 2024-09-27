@@ -15,8 +15,10 @@ import java.io.Serializable;
 public class User_Project implements Serializable {
     @Id
     @ManyToOne()
+    @JoinColumn(name = "id_user")
     private User user_id;
     @Id
     @ManyToOne()
+    @JoinColumn(name = "id_project")
     private Project project_id;
 }

@@ -18,12 +18,15 @@ public class Activity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id_activity;
     @ManyToOne()
+    @JoinColumn(name = "id_task")
     private Task task_id;
     private String name;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     @ManyToOne()
+    @JoinColumn(name = "id_user")
     private User user_id;
     @ManyToOne
+    @JoinColumn(name = "id_status_activity")
     private Status_activity statusActivity_id;
 }

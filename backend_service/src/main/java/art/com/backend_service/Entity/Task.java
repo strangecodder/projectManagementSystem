@@ -21,8 +21,10 @@ public class Task implements Serializable {
     private String name;
     private String description;
     @ManyToOne()
+    @JoinColumn(name = "id_story")
     private Story story_id;
     @ManyToOne()
+    @JoinColumn(name = "id_status")
     private Status status_id;
     @OneToMany(mappedBy = "task_id",cascade = CascadeType.ALL)
     private List<Activity> activities=new ArrayList<>();
