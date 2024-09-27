@@ -3,11 +3,16 @@ import './Button.css'
 
 function Button(props) {
 
-    const { style, title } = props
+    const { style, title, icon, action } = props
 
     return (
         <>
-            <button className={style}>{title}</button>
+            <button className={style} onClick={action}>
+                <span>
+                    <img src={icon} alt=""/>
+                    {title}
+                </span>
+            </button>
         </>
         
     )

@@ -4,13 +4,18 @@ function ProfilePage() {
 
     return (
         <>
-        <div className="projects-page">
-            <div className="projects-header">
-                <div>Профиль</div>
-            </div>
-            <div className="projects-list">
-            </div>
-        </div>
+        <aside className='main-aside'>
+            
+            </aside>
+            <section className='main-section'>
+                <div className="projects-page">
+                    <div className="projects-header">
+                        <div>Личный кабинет</div>
+                    </div>
+                    <div className="projects-list">
+                    </div>
+                </div>
+            </section>
         </>
     )
     

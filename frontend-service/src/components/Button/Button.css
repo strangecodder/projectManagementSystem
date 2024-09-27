@@ -9,6 +9,7 @@
     border-radius: 10px;
     font-size: 15px;
     font-weight: 500;
+    cursor: pointer;
     }
 
 .button-component:hover {
@@ -42,12 +43,12 @@
     color: #2592C1;
 }
 
-/* .button-component span {
+.button-component span {
     display: flex;
     align-items: center;
     gap: 5px;
     justify-content: center;
-} */
+}
 
 .to-project-button {
     width: 200px;
@@ -66,5 +67,5 @@
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    background-color: black;
+    background-color: #FFFFFF;
 }
