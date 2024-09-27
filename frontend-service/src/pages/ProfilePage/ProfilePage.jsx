@@ -1,4 +1,5 @@
 import './ProfilePage.css'
+import {Login} from "../../components/Login/Login.jsx";
 
 function ProfilePage() {
 
@@ -6,7 +7,7 @@ function ProfilePage() {
         <>
         <div className="projects-page">
             <div className="projects-header">
-                <div>Профиль</div>
+                <Login/>
             </div>
             <div className="projects-list">
             </div>
