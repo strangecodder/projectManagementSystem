@@ -1,0 +1,27 @@
+.description-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.description-card-title {
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.card-project-title {
+    margin: 0;
+    margin-bottom: 8px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.description-card-content {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+}

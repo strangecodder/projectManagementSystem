@@ -1,4 +1,4 @@
-.button-component {
+.linkbutton-component {
     width: 170px;
     height: 52px;
     margin: 0;
@@ -14,27 +14,27 @@
     align-content: center;
     }
 
-.button-component:hover {
+.linkbutton-component:hover {
     opacity: 0.75;
 }
 
-.button-component:active {
+.linkbutton-component:active {
     opacity: 0.5;
 }
 
-.profile-button {
+.profile-linkbutton {
     width: 52px;
     height: 52px;
     border-radius: 26px;
 }
 
-.logout-button {
+.logout-linkbutton {
     background-color: rgba(255, 109, 109, 0.50);
     color: #CF3838;
     width: 117px;
 }
 
-.login-button {
+.login-linkbutton {
     background-color: rgba(144, 255, 134, 0.5);
     color: #499243;
     width: 117px;
@@ -45,22 +45,26 @@
     color: #2592C1;
 }
 
-/* .button-component span {
+.button-component span {
     display: flex;
     align-items: center;
     gap: 5px;
     justify-content: center;
-} */
+}
 
-.card-content .to-project-button {
+.to-project-linkbutton {
     width: 200px;
     height: 35px;
     align-self: center;
 }
 
-.add-project-button {
+.add-project-linkbutton {
     width: 30px;
     height: 30px;
     border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.white {
     background-color: #FFFFFF;
 }
