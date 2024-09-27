@@ -1,10 +1,11 @@
 import './ProfilePage.css'
+import {Login} from "../../components/Login/Login.jsx";
 
 function ProfilePage() {
 
     return (
         <>
-        <aside className='main-aside'>
+            <aside className='main-aside'>
             
             </aside>
             <section className='main-section'>
