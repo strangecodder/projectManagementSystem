@@ -10,6 +10,10 @@ networks:
 
 services:
   db:
-    build: .
+    build:
+      context: .
+      args:
+        - NODE_ENV=local
+      dockerfile: DockerfilePostgres
     ports:
-      - 5432:5432
+      - 5438:5432
