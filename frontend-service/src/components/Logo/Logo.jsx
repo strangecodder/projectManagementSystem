@@ -1,4 +1,3 @@
-import teamLogo from '/src/assets/img/logo.png'
 import './Logo.css'
 
 function Logo() {
@@ -8,7 +7,7 @@ function Logo() {
             <img
             width="52px"
             height="52px"
-            src={teamLogo} 
+            src=""
             alt="Логотип команды"
             />
         </>

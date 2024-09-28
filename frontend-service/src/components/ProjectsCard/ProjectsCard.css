@@ -37,10 +37,19 @@
     justify-content: space-around;
 }
 
+.button-hide .card-footer button {
+    display: none;
+}
+
+.widget-hide .card-footer .date-time-widget {
+    display: none;
+}
+
 .hide-content .card-content {
     display: none;
 }
 
 .hide-content .card-footer {
     padding-top: 10px;
+    justify-content: space-between;
 }
