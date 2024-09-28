@@ -3,6 +3,7 @@ version: '3.9'
 volumes:
   postgres-data:
     driver: local
+  jenkins-data :
 
 networks:
   appnet:
@@ -13,3 +14,14 @@ services:
     build: .
     ports:
       - 5432:5432
+  jenkins :
+    image : jenkins/jenkins:lts
+    restart : always
+    ports :
+      - "8080:8080"
+    volumes :
+      - jenkins-data:/var/jenkins_home
+    environment :
+      - JENKINS_USER=admin
+      - JENKINS_PASS=password
+
