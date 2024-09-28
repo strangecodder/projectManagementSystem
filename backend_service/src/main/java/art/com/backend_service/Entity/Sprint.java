@@ -25,6 +25,6 @@ public class Sprint implements Serializable {
     private LocalDate end_date;
     @ManyToOne()
     private Project project_id;
-    @OneToMany(mappedBy = "sprint_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sprint_id")
     private List<Sprint_story> sprintStories=new ArrayList<>();
 }

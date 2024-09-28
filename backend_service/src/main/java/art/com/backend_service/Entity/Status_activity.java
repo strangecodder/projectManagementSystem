@@ -20,6 +20,6 @@ public class Status_activity implements Serializable {
     private Long id_status_activity;
     private String name;
     private String description;
-    @OneToMany(mappedBy = "statusActivity_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "statusActivity_id")
     private List<Activity> activities=new ArrayList<>();
 }

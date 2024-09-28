@@ -20,8 +20,8 @@ public class Project {
     private Long id_project;
     private String name;
     private String   description;
-    @OneToMany(mappedBy = "project_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "project_id")
     private List<User_Project> toProjects=new ArrayList<>();
-    @OneToMany(mappedBy = "project_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "project_id")
     private List<Sprint> sprints=new ArrayList<>();
 }

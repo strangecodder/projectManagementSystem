@@ -19,6 +19,6 @@ public class Status implements Serializable {
     @Column(name = "id")
     private Long id_status;
     private String name;
-    @OneToMany(mappedBy = "status_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "status_id")
     private List<Task > tasks=new ArrayList<>();
 }

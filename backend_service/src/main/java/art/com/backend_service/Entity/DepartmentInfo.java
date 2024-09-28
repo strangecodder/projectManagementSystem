@@ -21,6 +21,6 @@ public class DepartmentInfo implements Serializable {
     private Long id_department;
 
     private String name;
-    @OneToMany(mappedBy = "department_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "department_id")
     private List<User> users=new ArrayList<>();
 }

@@ -24,6 +24,6 @@ public class Event implements Serializable {
     private LocalDate start_time;
     private LocalDate end_time;
     private String address;
-    @OneToMany(mappedBy = "event_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "event_id")
     private List<Calendar> calendars=new ArrayList<>();
 }

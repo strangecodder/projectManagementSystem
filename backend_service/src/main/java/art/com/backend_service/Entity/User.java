@@ -28,10 +28,10 @@ public class User implements Serializable {
     private String git_nick;
     @ManyToOne()
     private DepartmentInfo department_id;
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user_id")
     private List<User_Project> toProjects=new ArrayList<>();
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user_id")
     private List<Calendar> calendars =new ArrayList<>();
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user_id")
     private List<Activity> activities =new ArrayList<>();
 }

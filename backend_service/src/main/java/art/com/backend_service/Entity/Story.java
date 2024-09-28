@@ -21,8 +21,8 @@ public class Story implements Serializable {
     private Long id_story;
     private String name;
     private String description;
-    @OneToMany(mappedBy = "story_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "story_id")
     List<Task> tasks=new ArrayList<>();
-    @OneToMany(mappedBy = "story_id",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "story_id")
     List<Sprint_story> sprintStories=new ArrayList<>();
 }
