@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/project/{pid}/sprint")
+@RequestMapping("/projects/{pid}/sprint")
 @RequiredArgsConstructor
 public class SprintsController {
     private final SprintService service;

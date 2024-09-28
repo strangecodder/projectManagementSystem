@@ -13,8 +13,8 @@ import java.util.List;
 
 @Repository
 public interface SprintRepository extends JpaRepository<Sprint, Long> {
-
-    List<Sprint> findAllByProject_id(@Param("project_id") Long project_id);
+    @Query("select  s.id_sprint,s.name,s.start_date,s.sprintStories,s.end_date,s.project_id   from Sprint s where s.project_id=:pid")// не работает ,почему? А я не ебу
+    List<Sprint> findAllByProject_id(@Param("pid") Long pid);
 
     @Modifying
     @Transactional

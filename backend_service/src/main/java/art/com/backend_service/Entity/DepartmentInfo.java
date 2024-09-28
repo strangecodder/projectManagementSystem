@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Data
@@ -22,5 +21,5 @@ public class DepartmentInfo implements Serializable {
 
     private String name;
     @OneToMany(mappedBy = "department_id")
-    private List<UserInfo> users=new ArrayList<>();
+    private List<User> users=new ArrayList<>();
 }

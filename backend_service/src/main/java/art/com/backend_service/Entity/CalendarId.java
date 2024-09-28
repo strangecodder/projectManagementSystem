@@ -12,6 +12,6 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode
 public class CalendarId implements Serializable {
-    private UserInfo user_id;
+    private User user_id;
     private Event event_id;
 }

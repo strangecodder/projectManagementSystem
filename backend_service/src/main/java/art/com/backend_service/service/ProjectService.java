@@ -3,14 +3,12 @@ package art.com.backend_service.service;
 import art.com.backend_service.DTO.ProjectDTO;
 import art.com.backend_service.DTO.UserDTO;
 import art.com.backend_service.Entity.Project;
-import art.com.backend_service.Entity.UserInfo;
+import art.com.backend_service.Entity.User;
 import art.com.backend_service.Entity.User_Project;
 import art.com.backend_service.Repository.ProjectRepository;
 import art.com.backend_service.Repository.UserRepository;
 import art.com.backend_service.Repository.User_projectRepository;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,18 +20,20 @@ public class ProjectService {
     private final User_projectRepository userProjectRepository;
     private final UserRepository userRepository;
 
-    public Project DTOToProject(ProjectDTO projectDTO){
-        Project project=new Project();
+    public Project DTOToProject(ProjectDTO projectDTO) {
+        Project project = new Project();
         project.setName(projectDTO.getName());
         project.setDescription(projectDTO.getDescription());
-        List<UserDTO> users=projectDTO.getUsers();
-        for (UserDTO u :
-                users) {
-            UserInfo userInfo=userRepository.findById(u.getId()).orElseThrow();
-            User_Project userProject=new User_Project();
-            userProject.setProject_id(project);
-            userProject.setUser_id(userInfo);
-            userProjectRepository.save(userProject);
+        if (projectDTO.getUsers() != null) {
+            List<UserDTO> users = projectDTO.getUsers();
+            for (UserDTO u :
+                    users) {
+                User user = userRepository.findById(u.getId()).orElseThrow();
+                User_Project userProject = new User_Project();
+                userProject.setProject_id(project);
+                userProject.setUser_id(user);
+                userProjectRepository.save(userProject);
+            }
         }
         return project;
     }
@@ -50,11 +50,13 @@ public class ProjectService {
 
         projectRepository.save(DTOToProject(project));
     }
-    public void change(Long id,ProjectDTO newProject){
+
+    public void change(Long id, ProjectDTO newProject) {
         projectRepository.updateProjectByDescription(newProject.getDescription(), id);
         projectRepository.updateProjectByName(newProject.getName(), id);
     }
-    public void delete(Long id){
-        projectRepository.delete(projectRepository.findById(id).orElseThrow());
+
+    public void delete(Long id) {
+        projectRepository.deleteById(id);
     }
 }

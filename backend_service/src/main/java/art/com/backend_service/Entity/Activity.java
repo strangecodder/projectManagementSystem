@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @AllArgsConstructor
@@ -24,7 +23,7 @@ public class Activity implements Serializable {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     @ManyToOne()
-    private UserInfo user_id;
+    private User user_id;
     @ManyToOne
     private Status_activity statusActivity_id;
 }
