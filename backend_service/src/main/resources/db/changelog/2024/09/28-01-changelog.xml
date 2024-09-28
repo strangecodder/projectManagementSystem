@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.27.xsd"  objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <!-- Create sequences -->
+    <changeSet id="1" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="activity_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="2" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="department_info_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="3" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="project_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="4" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="sprint_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="5" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="status_activity_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="6" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="status_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="7" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="story_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="8" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="task_seq" startValue="1"/>
+    </changeSet>
+    <changeSet id="9" author="artemdemidov">
+        <createSequence incrementBy="50" sequenceName="user_seq" startValue="1"/>
+    </changeSet>
+
+    <!-- Create tables -->
+    <changeSet id="10" author="artemdemidov">
+        <preConditions>
+            <not>
+                <tableExists tableName="calendar"/>
+            </not>
+        </preConditions>
+        <createTable tableName="calendar">
+            <column name="user_id_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_calendar"/>
+            </column>
+            <column name="event_id_id_event" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_calendar"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="11" author="artemdemidov">
+        <createTable tableName="event">
+            <column name="id_event" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_event"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="end_time" type="DATETIME"/>
+            <column name="start_time" type="DATETIME"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="12" author="artemdemidov">
+        <createTable tableName="user">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user"/>
+            </column>
+            <column name="department_id_id" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="git_nick" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="13" author="artemdemidov">
+        <createTable tableName="activity">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_activity"/>
+            </column>
+            <column name="end_time" type="DATETIME"/>
+            <column name="start_time" type="DATETIME"/>
+            <column name="status_activity_id_id_status_activity" type="BIGINT"/>
+            <column name="task_id_id" type="BIGINT"/>
+            <column name="user_id_id" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="14" author="artemdemidov">
+        <createTable tableName="status_activity">
+            <column name="id_status_activity" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_status_activity"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="15" author="artemdemidov">
+        <createTable tableName="sprint">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sprint"/>
+            </column>
+            <column name="project_id_id" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="start_date" type="DATE"/>
+            <column name="end_date" type="DATE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="16" author="artemdemidov">
+        <createTable tableName="user_project">
+            <column name="user_id_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_project"/>
+            </column>
+            <column name="project_id_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user_project"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="17" author="artemdemidov">
+        <createTable tableName="sprint_story">
+            <column name="sprint_id_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sprint_story"/>
+            </column>
+            <column name="story_id_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sprint_story"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="18" author="artemdemidov">
+        <createTable tableName="task">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_task"/>
+            </column>
+            <column name="status_id_id" type="BIGINT"/>
+            <column name="story_id_id" type="BIGINT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="19" author="artemdemidov">
+        <createTable tableName="project">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_project"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="20" author="artemdemidov">
+        <createTable tableName="status">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_status"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="21" author="artemdemidov">
+        <createTable tableName="story">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_story"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="22" author="artemdemidov">
+        <createTable tableName="department_info">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_departmentinfo"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Add foreign key constraints -->
+    <changeSet id="23" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="status_activity_id_id_status_activity" baseTableName="activity" constraintName="FK_ACTIVITY_ON_STATUSACTIVITY_ID_ID_STATUS_ACTIVITY" referencedColumnNames="id_status_activity" referencedTableName="status_activity"/>
+    </changeSet>
+    <changeSet id="24" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="task_id_id" baseTableName="activity" constraintName="FK_ACTIVITY_ON_TASK_ID" referencedColumnNames="id" referencedTableName="task"/>
+    </changeSet>
+    <changeSet id="25" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="user_id_id" baseTableName="activity" constraintName="FK_ACTIVITY_ON_USER_ID" referencedColumnNames="id" referencedTableName="user"/>
+    </changeSet>
+    <changeSet id="26" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="event_id_id_event" baseTableName="calendar" constraintName="FK_CALENDAR_ON_EVENT_ID_ID_EVENT" referencedColumnNames="id_event" referencedTableName="event"/>
+    </changeSet>
+    <changeSet id="27" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="user_id_id" baseTableName="calendar" constraintName="FK_CALENDAR_ON_USER_ID" referencedColumnNames="id" referencedTableName="user"/>
+    </changeSet>
+    <changeSet id="28" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="project_id_id" baseTableName="sprint" constraintName="FK_SPRINT_ON_PROJECT_ID" referencedColumnNames="id" referencedTableName="project"/>
+    </changeSet>
+    <changeSet id="29" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="sprint_id_id" baseTableName="sprint_story" constraintName="FK_SPRINT_STORY_ON_SPRINT_ID" referencedColumnNames="id" referencedTableName="sprint"/>
+    </changeSet>
+    <changeSet id="30" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="story_id_id" baseTableName="sprint_story" constraintName="FK_SPRINT_STORY_ON_STORY_ID" referencedColumnNames="id" referencedTableName="story"/>
+    </changeSet>
+    <changeSet id="31" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="status_id_id" baseTableName="task" constraintName="FK_TASK_ON_STATUS_ID" referencedColumnNames="id" referencedTableName="status"/>
+    </changeSet>
+    <changeSet id="32" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="story_id_id" baseTableName="task" constraintName="FK_TASK_ON_STORY_ID" referencedColumnNames="id" referencedTableName="story"/>
+    </changeSet>
+    <changeSet id="33" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="department_id_id" baseTableName="user" constraintName="FK_USER_ON_DEPARTMENT_ID" referencedColumnNames="id" referencedTableName="department_info"/>
+    </changeSet>
+    <changeSet id="34" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="project_id_id" baseTableName="user_project" constraintName="FK_USER_PROJECT_ON_PROJECT_ID" referencedColumnNames="id" referencedTableName="project"/>
+    </changeSet>
+    <changeSet id="35" author="artemdemidov">
+        <addForeignKeyConstraint baseColumnNames="user_id_id" baseTableName="user_project" constraintName="FK_USER_PROJECT_ON_USER_ID" referencedColumnNames="id" referencedTableName="user"/>
+    </changeSet>
+</databaseChangeLog>
+
