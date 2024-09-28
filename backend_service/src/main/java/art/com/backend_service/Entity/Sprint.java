@@ -18,7 +18,8 @@ import java.util.UUID;
 public class Sprint implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id_sprint;
+    @Column(name = "id")
+    private Long id_sprint;
     private String name;
     private LocalDate start_date;
     private LocalDate end_date;

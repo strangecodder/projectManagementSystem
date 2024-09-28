@@ -16,7 +16,8 @@ import java.util.UUID;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id_project;
+    @Column(name = "id")
+    private Long id_project;
     private String name;
     private String   description;
     @OneToMany(mappedBy = "project_id",cascade = CascadeType.ALL)

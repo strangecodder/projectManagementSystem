@@ -16,6 +16,7 @@ import java.util.List;
 public class Status implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id_status;
     private String name;
     @OneToMany(mappedBy = "status_id",cascade = CascadeType.ALL)

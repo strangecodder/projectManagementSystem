@@ -18,7 +18,8 @@ import java.util.UUID;
 public class Event implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id_event;
+    @Column(name = "id")
+    private Long id_event;
     private String name;
     private LocalDate start_time;
     private LocalDate end_time;
