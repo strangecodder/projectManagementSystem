@@ -3,6 +3,7 @@ import ProjectsCard from "../../components/ProjectsCard/ProjectsCard.jsx"
 import Button from "../../components/Button/Button.jsx"
 import LinkButton from "../../components/LinkButton/LinkButton.jsx"
 import Modal from "../../components/Modal/Modal.jsx"
+import Input from "../../components/Input/Input.jsx"
 import addIcon from "../../assets/icons/carbon_add-alt.svg"
 import './KanbanPage.css'
 
@@ -19,17 +20,46 @@ function KanbanPage() {
             <LinkButton style='linkbutton-component' link='/projects/project-id/sprints/sprint-id/tasks/wiki' title='Вики'/>
         </aside>
         <section className='main-section'>
-            <div className="projects-page">
-                <div className="projects-header">
-                    <div>Задачи</div>
-                    <Button style='button-component add-project-button' icon={addIcon} action={clickAction}/>
+            <div className="kanban">
+                <div className="kanban-page">
+                    <div className="kanban-header">
+                        <div>Задачи</div>
+                        <Button style='button-component add-project-button' icon={addIcon} action={clickAction}/>
+                    </div>
+                    <div className="kanban-list">
+                        <ProjectsCard title='Задача 1' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                        <ProjectsCard title='Задача 2' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                    </div>
                 </div>
-                <div className="projects-list">
-                    <ProjectsCard title='Задача 1' style='card hide-content' description='Описание задачи' endDateTime='16:00'/>
-                    <ProjectsCard title='Задача 2' style='card hide-content' description='Описание задачи' endDateTime='16:00'/>
+                <Modal active={modalActive} setActive={setModalActive} children={<Input lbTitle='Название задачи' lbDesc='Описание задачи' subTitle='Создать задачу'/>} />
+                <div className="kanban-page">
+                    <div className="kanban-header">
+                        <div>В работе</div>
+                    </div>
+                    <div className="kanban-list">
+                        <ProjectsCard title='Задача 1' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                        <ProjectsCard title='Задача 2' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                    </div>
+                </div>
+                <div className="kanban-page">
+                    <div className="kanban-header">
+                        <div>На проверке</div>
+                    </div>
+                    <div className="kanban-list">
+                        <ProjectsCard title='Задача 1' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                        <ProjectsCard title='Задача 2' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                    </div>
+                </div>
+                <div className="kanban-page">
+                    <div className="kanban-header">
+                        <div>Выполнено</div>
+                    </div>
+                    <div className="kanban-list">
+                        <ProjectsCard title='Задача 1' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                        <ProjectsCard title='Задача 2' style='card hide-content is-draggable' description='Описание задачи' endDateTime='16:00' draggable={true}/>
+                    </div>
                 </div>
             </div>
-            <Modal active={modalActive} setActive={setModalActive} children={<p></p>} />
         </section>
         </>
     )

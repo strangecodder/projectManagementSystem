@@ -12,12 +12,12 @@ function ProjectsCard(props) {
     const [modalActive, setModalActive] = useState(false)
     let clickAction = () => setModalActive(true)
 
-    const { title, buttonTitle, description, linkTo, style, endDateTime } = props
+    const { title, buttonTitle, description, linkTo, style, endDateTime, draggable } = props
 
 
     return (
         <>
-        <div className={style}>
+        <div className={style} draggable={draggable}>
             <div className="card-header">
                 <div className="card-title">{title}</div>
             </div>

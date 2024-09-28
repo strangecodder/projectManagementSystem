@@ -3,11 +3,11 @@ import './LinkButton.css'
 
 function LinkButton(props) {
 
-    const { style, link, title, icon, iconSize } = props
+    const { style, link, title, icon, iconSize, action } = props
 
     return (
         <>
-            <Link className={style} to={link}>
+            <Link className={style} to={link} onClick={action}>
                 <span>
                     <img src={icon} width={iconSize} height={iconSize} alt=""/>
                     {title}

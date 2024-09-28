@@ -37,6 +37,10 @@
     justify-content: space-around;
 }
 
+.is-draggable {
+    cursor: move;
+}
+
 .button-hide .card-footer button {
     display: none;
 }

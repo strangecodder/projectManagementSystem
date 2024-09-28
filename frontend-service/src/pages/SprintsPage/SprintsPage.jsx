@@ -2,6 +2,7 @@ import { useState } from "react"
 import ProjectsCard from "../../components/ProjectsCard/ProjectsCard.jsx"
 import Button from "../../components/Button/Button.jsx"
 import Modal from "../../components/Modal/Modal.jsx"
+import Input from "../../components/Input/Input.jsx"
 import addIcon from "../../assets/icons/carbon_add-alt.svg"
 import './SprintsPage.css'
 
@@ -27,7 +28,7 @@ function SprintsPage() {
                     <ProjectsCard title='Спринт 3' style='card button-hide' buttonTitle='Перейти к спринту' linkTo='/projects/project-id/sprints/sprint-id/tasks' endDateTime='01.01.2025'/>
                 </div>
             </div>
-            <Modal active={modalActive} setActive={setModalActive} children={<p></p>} />
+            <Modal active={modalActive} setActive={setModalActive} children={<Input lbTitle='Название спринта' lbDesc='Описание спринта' subTitle='Создать спринт'/>} />
         </section>
         </>
     )

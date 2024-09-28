@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import './Login.css';
-export const Login = () => {
 
+function Login() {
+    
     const [action, setAction] = useState('')
 
     const registerLink = () => {
@@ -68,3 +69,5 @@ export const Login = () => {
         </div>
     )
 }
+
+export default Login

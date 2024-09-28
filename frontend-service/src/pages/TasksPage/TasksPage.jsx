@@ -3,6 +3,7 @@ import ProjectsCard from "../../components/ProjectsCard/ProjectsCard.jsx"
 import Button from "../../components/Button/Button.jsx"
 import LinkButton from "../../components/LinkButton/LinkButton.jsx"
 import Modal from "../../components/Modal/Modal.jsx"
+import Input from "../../components/Input/Input.jsx"
 import addIcon from "../../assets/icons/carbon_add-alt.svg"
 import './TasksPage.css'
 
@@ -33,7 +34,7 @@ function TasksPage() {
                     <ProjectsCard title='Задача 6' style='card hide-content' description='Описание задачи' endDateTime='16:00'/>
                 </div>
             </div>
-            <Modal active={modalActive} setActive={setModalActive} children={<p></p>} />
+            <Modal active={modalActive} setActive={setModalActive} children={<Input lbTitle='Название задачи' lbDesc='Описание задачи' subTitle='Создать задачу'/>} />
         </section>
         </>
     )

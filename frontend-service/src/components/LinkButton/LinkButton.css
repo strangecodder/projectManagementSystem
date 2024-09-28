@@ -12,6 +12,7 @@
     text-align: center;
     text-decoration: none;
     align-content: center;
+    justify-content: center;
     }
 
 .linkbutton-component:hover {
@@ -45,7 +46,7 @@
     color: #2592C1;
 }
 
-.button-component span {
+.linkbutton-component span {
     display: flex;
     align-items: center;
     gap: 5px;

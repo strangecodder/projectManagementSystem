@@ -1,11 +1,10 @@
-@import url('https://fonts.googleappis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 body{
     font-family: "Poppins", sans-serif;
 }
 
 code {
-    font-family: "Source Code Pro", Menlo, Monaco, Consolas,'Courier New', monospace;
+    
 }
 
 wrapper.form-box{

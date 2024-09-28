@@ -10,6 +10,8 @@ import TasksPage from './pages/TasksPage/TasksPage.jsx'
 import KanbanPage from './pages/KanbanPage/KanbanPage.jsx'
 import teamLogo from './assets/img/logo.png'
 import profileIcon from './assets/icons/carbon_user-profile.svg'
+import loginIcon from './assets/icons/carbon_login.svg'
+import logoutIcon from './assets/icons/carbon_logout.svg'
 import './App.css'
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <LinkButton style='linkbutton-component' link='/dashboard' title='Календарь'/>
         <LinkButton style='linkbutton-component active' link='/projects' title='Проекты'/>
       </div>
+      <LinkButton title='Вход' style='linkbutton-component login-linkbutton hide' link='/login' icon={loginIcon}/>
+      <LinkButton title='Выход' style='linkbutton-component logout-linkbutton hide' link='/login' icon={logoutIcon}/>
       <LinkButton style='linkbutton-component profile-linkbutton' link='/profile' icon={profileIcon} />
     </div>
     <div className='main-body'>

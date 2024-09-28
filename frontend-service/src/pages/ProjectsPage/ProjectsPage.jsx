@@ -1,13 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ProjectsCard from "../../components/ProjectsCard/ProjectsCard.jsx"
 import Button from "../../components/Button/Button.jsx"
 import Modal from "../../components/Modal/Modal.jsx"
+import Input from "../../components/Input/Input.jsx"
 import addIcon from "../../assets/icons/carbon_add-alt.svg"
 import './ProjectsPage.css'
 
 function ProjectsPage() {
     const [modalActive, setModalActive] = useState(false)
     let clickAction = () => setModalActive(true)
+    // const [currencies, setCurrencies] = useState([])
+
+    // const fetchCurrencies = () => {
+    //     axios.get().then(r => {
+    //         const currenciesResponse = r.data
+    //         setCurrencies()
+    //     })
+    // }
+    
+    // useEffect(() => {
+    //     fetchCurrencies()
+    // }, [])
 
     return (
         <>
@@ -24,7 +37,7 @@ function ProjectsPage() {
                     <ProjectsCard title='Проект 1' style='card widget-hide' buttonTitle='Перейти к проекту' linkTo='/projects/project-id/sprints' description='Описание проекта'/>
                 </div>
             </div>
-            <Modal active={modalActive} setActive={setModalActive} children={<p>А может негр мне тут реп не читать</p>} />
+            <Modal active={modalActive} setActive={setModalActive} children={<Input lbTitle='Название проекта' lbDesc='Описание проекта' subTitle='Создать проект'/>} />
         </section>
         </>
     )
