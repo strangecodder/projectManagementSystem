@@ -8,7 +8,7 @@ import java.util.UUID;
 
 @Data
 public class SprintDTO {
-    private UUID id;
+    private Long id;
     private String name;
     private String description;
     private LocalDate startDate;

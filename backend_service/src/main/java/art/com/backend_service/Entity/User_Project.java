@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class User_Project implements Serializable {
     @Id
     @ManyToOne()
-    private User user_id;
+    private UserInfo user_id;
     @Id
     @ManyToOne()
     private Project project_id;

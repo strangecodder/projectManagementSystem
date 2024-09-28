@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class Calendar implements Serializable {
     @Id
     @ManyToOne()
-    private User user_id;
+    private UserInfo user_id;
     @Id
     @ManyToOne()
     private Event event_id;

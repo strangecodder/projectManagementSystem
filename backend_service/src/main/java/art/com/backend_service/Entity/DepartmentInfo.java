@@ -22,5 +22,5 @@ public class DepartmentInfo implements Serializable {
 
     private String name;
     @OneToMany(mappedBy = "department_id")
-    private List<User> users=new ArrayList<>();
+    private List<UserInfo> users=new ArrayList<>();
 }

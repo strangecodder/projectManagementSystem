@@ -13,6 +13,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class ToProjectId implements Serializable {
     private Project project_id;
-    private  User user_id;
+    private  UserInfo user_id;
 
 }

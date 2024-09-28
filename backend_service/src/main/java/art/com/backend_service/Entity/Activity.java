@@ -24,7 +24,7 @@ public class Activity implements Serializable {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     @ManyToOne()
-    private User user_id;
+    private UserInfo user_id;
     @ManyToOne
     private Status_activity statusActivity_id;
 }
