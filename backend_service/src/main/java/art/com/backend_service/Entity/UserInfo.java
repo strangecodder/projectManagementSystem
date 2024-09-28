@@ -14,7 +14,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+public class UserInfo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
