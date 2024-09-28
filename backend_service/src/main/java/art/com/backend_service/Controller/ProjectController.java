@@ -1,5 +1,6 @@
 package art.com.backend_service.Controller;
 
+import art.com.backend_service.DTO.ProjectDTO;
 import art.com.backend_service.Entity.Project;
 import art.com.backend_service.service.ProjectService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.List;
 @RequestMapping("/projects")
 @RequiredArgsConstructor
 public class ProjectController {
-    final ProjectService projectService;
+   private final ProjectService projectService;
 
     @GetMapping()
     public ResponseEntity<List<Project>> allProject(){
@@ -22,8 +23,8 @@ public class ProjectController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
     @PostMapping()
-    public ResponseEntity<?>  createProject(@RequestBody Project project){
-        projectService.create(project);
+    public ResponseEntity<?>  createProject(@RequestBody ProjectDTO projectDTO){
+        projectService.create(projectDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
     @GetMapping("/{id}")
@@ -32,7 +33,7 @@ public class ProjectController {
         return new ResponseEntity<>(project, HttpStatus.OK);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateProject(@PathVariable("id") Long id,@RequestBody Project project){
+    public ResponseEntity<?> updateProject(@PathVariable("id") Long id,@RequestBody ProjectDTO project){
         projectService.change(id,project);
         return new ResponseEntity<>(HttpStatus.OK);
     }
