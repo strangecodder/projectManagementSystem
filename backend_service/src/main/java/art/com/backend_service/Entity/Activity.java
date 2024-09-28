@@ -16,7 +16,8 @@ import java.util.UUID;
 public class Activity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id_activity;
+    @Column(name = "id")
+    private Long id_activity;
     @ManyToOne()
     private Task task_id;
     private String name;

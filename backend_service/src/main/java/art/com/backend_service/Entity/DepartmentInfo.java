@@ -17,7 +17,8 @@ import java.util.UUID;
 public class DepartmentInfo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id_department;
+    @Column(name = "id")
+    private Long id_department;
 
     private String name;
     @OneToMany(mappedBy = "department_id", cascade = CascadeType.ALL)
